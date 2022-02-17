@@ -7,8 +7,10 @@ export class MathController {
     constructor(private mathService: MathService){}
 
     @Post('add')
-    async accumulate(@Body('data') data: number[]){
-        this.logger.log('Adding ' + data.toString()); // log something on any call
+    async accumulate(@Body('data') data: number[]) {
+        console.log('dataa ==>>>>>> ', data);
+        
+        // this.logger.log('Adding ' + data.toString()); // log something on any call
         return this.mathService.accumulate(data) // use math service to calc result & return
     }
 }
